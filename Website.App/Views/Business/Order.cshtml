@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "我的商机";
+    Layout = "~/Views/Shared/_LayoutTwo.cshtml";
+}
+
+<form method="post" action="" id="form1" class="per_login">
+    <div class="dk">
+        <p>无需注册，输入手机号和验证码即可下单</p>
+    </div>
+    <div class="carMeg">
+        <div class="xia">
+
+            <input id="txtMobile" class="tel" type="text" placeholder="请输入手机号码" />
+            <div class="useryzm">
+                <input id="txtCheckCode" class="carPhone_lastinput1 yzm" type="text" placeholder="请输入验证码" />
+                <input id="btn-send-code" class="carPhone_lastinput2" type="button" value="发送验证码" />
+            </div>
+            <div class="tips" id="valiMsg"></div>
+            <button id="submit" type="button" class="submit_button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+
+        </div>
+    </div>
+</form>

@@ -1,0 +1,740 @@
+﻿@charset "utf-8";
+
+.br {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix {
+    clear: both;
+}
+
+    .clearfix:after {
+        content: "　";
+        display: block;
+        overflow: hidden;
+        height: 0;
+        clear: both;
+    }
+
+    .clearfix:before {
+        content: "　";
+        display: block;
+        height: 0;
+        overflow: hidden;
+        clear: both;
+    }
+/*.jiezi {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cube {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  /* Other transform properties here */
+/*-webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}*/
+
+/*.ui-bar-a,
+.ui-page-theme-a .ui-bar-inherit,
+html .ui-bar-a .ui-bar-inherit,
+html .ui-body-a .ui-bar-inherit,
+html body .ui-group-theme-a .ui-bar-inherit {
+  border-color: rgba(36, 54, 89, 0.2);
+}*/
+
+body {
+    min-height: 100% !important;
+    background: #fff;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-size: 62.5%;
+    outline: none;
+}
+
+body {
+    font-family: "Helvetica", sans-self;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+th,
+td,
+p,
+blockquote,
+pre,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+hr {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+
+
+
+em {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a img {
+        border: none;
+    }
+
+textarea:-moz-placeholder,
+input:-moz-placeholder,
+textarea:placeholder,
+input:placeholder {
+    color: #8f9bb3;
+}
+
+::-webkit-input-placeholder {
+    color: #8f9bb3;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.ui-content {
+    padding: 0;
+}
+
+.ui-header .ui-title,
+.ui-footer .ui-title {
+    margin: 0 20% 0 26%;
+}
+
+.nobd {
+    border: 0 !important;
+}
+
+.nobdt {
+    border-top: 0 !important;
+}
+
+.fz13 {
+    font-size: 1.3rem !important;
+}
+
+.line {
+    clear: both;
+    height: 16px;
+    background: #f2f4f7;
+    border-top: 1px solid #e1e6f0;
+    border-bottom: 1px solid #e1e6f0;
+}
+
+    .line:after {
+        content: "　";
+        display: block;
+        overflow: hidden;
+        height: 0;
+        clear: both;
+    }
+
+    .line:before {
+        content: "　";
+        display: block;
+        height: 0;
+        overflow: hidden;
+        clear: both;
+    }
+
+.title {
+    height: 24px;
+    border-top: 1px solid #e1e6f0;
+    background: #f2f4f7;
+}
+
+.main-title {
+    font-size: 1.6rem;
+    padding-left: 16px;
+    line-height: 44px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div[data-role="content"] {
+    clear: both;
+}
+
+    div[data-role="content"]:after {
+        content: "　";
+        display: block;
+        overflow: hidden;
+        height: 0;
+        clear: both;
+    }
+
+    div[data-role="content"]:before {
+        content: "　";
+        display: block;
+        height: 0;
+        overflow: hidden;
+        clear: both;
+    }
+
+
+
+/* 头和尾 */
+/*.header {
+    height: 45px!important;
+    background-color: #fff;
+}*/
+.header {
+    height: 45px;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    -webkit-background-size: 100% 49px;
+    background-size: 100% 49px;
+    padding-top: 5px;
+    text-align: center;
+    -webkit-box-shadow: 0 0 8px #888;
+    background-color: #fff;
+}
+
+    .header a {
+        position: absolute;
+        color: #d43b3d;
+        font-size: 1.4rem;
+    }
+/*.header h1 {
+  line-height: 49px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #1f3e5d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline;
+  background: #fff;
+  padding: 0 15px;
+}*/
+/*.header h1 i{
+  display: inline-block;
+  background: url(../img/logo.png) left center no-repeat #fff;
+  -webkit-background-size: 30px 28px;
+  background-size: 30px 28px;
+  width: 30px;
+  height: 28px;
+}*/
+
+
+/*reset end*/
+body {
+    font-family: "Microsoft YaHei";
+}
+
+.flr {
+    float: right;
+}
+
+.fll {
+    float: left;
+}
+
+.header ~ .container {
+    padding-top: 45px;
+}
+
+.footer-index ~ .container {
+    padding-bottom: 60px;
+}
+
+.fixed-bot ~ .container {
+    padding-bottom: 49px;
+}
+
+.fixed-bot-person ~ .container {
+    padding-bottom: 79px;
+}
+
+.btn-bot-gc ~ .container {
+    padding-bottom: 79px;
+}
+
+.footer-channel ~ .container {
+    padding-bottom: 50px;
+}
+
+.container {
+    background: #fff;
+    width: 100%;
+}
+
+.zm {
+    position: fixed;
+    right: 26px;
+    top: 80px;
+}
+
+    .zm ul li {
+        line-height: 16px;
+    }
+
+        .zm ul li a {
+            font-size: 1.4rem;
+            color: #1f3e5d;
+        }
+
+a.city {
+    height: 44px;
+    line-height: 44px;
+    display: inline-block;
+    color: #1f3e5d !important;
+    text-decoration: none;
+    top: 5px;
+    left: 0;
+    padding-left: 16px;
+    font-size: 1.4rem !important;
+}
+
+    a.city i {
+        display: inline-block;
+        background: url(../img/jt-down.png) center center no-repeat;
+        -webkit-background-size: 20px 20px;
+        background-size: 20px 20px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+    }
+
+.standard {
+    margin-top: 10px;
+}
+
+.footer-index {
+    display: table;
+    height: 50px;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 5px;
+    z-index: 999;
+    border-top: 1px solid #E3E5E4;
+}
+
+.foot_submit {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+}
+
+@media screen and (min-width: 588px) {
+    .gotop {
+        right: 50%;
+        margin-right: -314px;
+    }
+}
+
+
+@media screen and (min-width: 541px) {
+    body {
+        width: 540px;
+        margin: 0 auto !important;
+    }
+
+    .header {
+        -webkit-background-size: 100% 49px;
+        background-size: 100% 49px;
+        width: 540px;
+        height: 49px;
+    }
+
+    .footer-index {
+        width: 540px;
+        bottom: 0;
+        left: 50% !important;
+        margin-left: -270px !important;
+    }
+
+    .header-index {
+        background: #fff;
+        width: 540px;
+        height: 49px;
+    }
+
+    .fixed-bot {
+        width: 540px;
+        margin: 0 auto !important;
+    }
+
+    .fixed-bot-person {
+        width: 540px;
+        margin: 0 auto !important;
+        bottom: 0;
+        left: 50%;
+        margin-left: -270px !important;
+    }
+
+    .bm-tips-page {
+        width: 540px;
+        bottom: 0;
+        left: 50% !important;
+        margin-left: -270px !important;
+    }
+
+    .foot_submit {
+        width: 540px;
+        bottom: 0;
+        left: 50% !important;
+        margin-left: -270px !important;
+    }
+
+    .selectContent {
+        width: 540px;
+        max-width: 540px;
+        left: 50% !important;
+        margin-left: -270px !important;
+    }
+
+    .mobileSelect {
+        width: 540px;
+        max-width: 540px;
+        left: 50% !important;
+        margin-left: -270px !important;
+    }
+}
+
+
+
+/*下拉框组件 B*/
+
+
+.mobileSelectCover {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+}
+
+.areaSelect {
+    color: #5f5f5f;
+}
+/*.trigger1,#trigger2,#trigger3,#trigger4{
+  font-size: 1.3rem;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 6px;
+  border: 1px solid #c5c5c5;
+  color:#5f5f5f;
+}*/
+.trig {
+    font-size: 1.3rem;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 6px;
+    border: 1px solid #c5c5c5;
+    color: #5f5f5f;
+}
+
+.mobileSelect {
+    position: relative;
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+    .mobileSelect .grayLayer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 888;
+        display: block;
+    }
+
+    .mobileSelect .selectContent {
+        width: 100%;
+        display: block;
+        position: fixed;
+        z-index: 889;
+        color: #fff;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        bottom: -350px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+        .mobileSelect .selectContent .fixWidth {
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            background-color: transparent;
+        }
+
+            .mobileSelect .selectContent .fixWidth:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+        .mobileSelect .selectContent .btnBar {
+            border-bottom: 1px solid #DCDCDC;
+            font-size: 15px;
+            height: 45px;
+            position: relative;
+            text-align: center;
+            line-height: 45px;
+        }
+
+            .mobileSelect .selectContent .btnBar .cancel,
+            .mobileSelect .selectContent .btnBar .ensure {
+                height: 45px;
+                width: 55px;
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+            }
+
+            .mobileSelect .selectContent .btnBar .cancel {
+                left: 0;
+                color: #666;
+            }
+
+            .mobileSelect .selectContent .btnBar .ensure {
+                right: 0;
+                color: #1e83d3;
+            }
+
+            .mobileSelect .selectContent .btnBar .title {
+                font-size: 15px;
+            }
+
+        .mobileSelect .selectContent .panel:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .mobileSelect .selectContent .panel .wheels {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .mobileSelect .selectContent .panel .wheel {
+            position: relative;
+            float: left;
+            width: 50%;
+            height: 200px;
+            overflow: hidden;
+            -webkit-transition: width 0.3s ease;
+            transition: width 0.3s ease;
+            z-index: 200;
+        }
+
+            .mobileSelect .selectContent .panel .wheel .selectContainer {
+                display: block;
+                text-align: center;
+                -webkit-transition: -webkit-transform 0.15s ease-out;
+                transition: -webkit-transform 0.15s ease-out;
+                transition: transform 0.15s ease-out;
+                transition: transform 0.15s ease-out, -webkit-transform 0.15s ease-out;
+            }
+
+                .mobileSelect .selectContent .panel .wheel .selectContainer li {
+                    font-size: 1.3rem;
+                    display: block;
+                    height: 34px;
+                    line-height: 34px;
+                    cursor: pointer;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+        .mobileSelect .selectContent .panel .selectLine {
+            height: 34px;
+            width: 100%;
+            position: absolute;
+            top: 68px;
+            pointer-events: none;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            background-color: #DC1E32;
+            z-index: 100;
+        }
+
+        .mobileSelect .selectContent .panel .shadowMask {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 200px;
+            pointer-events: none;
+        }
+
+.mobileSelect-show {
+    opacity: 1;
+    z-index: 10000;
+    visibility: visible;
+}
+
+    .mobileSelect-show .selectContent {
+        bottom: 0;
+    }
+
+
+
+/*新添加的 B*/
+.mobileSelect .selectContent .meta {
+    font-size: 1.3rem;
+    line-height: 54px;
+    text-indent: 1em;
+    position: relative;
+}
+
+.mobileSelect .selectContent .meta-two {
+    font-size: 1.3rem;
+    line-height: 54px;
+    text-indent: 1em;
+    border-top: 2px solid #5a5a5a;
+}
+
+.mobileSelect .selectContent .hottitle {
+    font-size: 1.3rem;
+}
+
+.mobileSelect .selectContent .meta .close {
+    position: absolute;
+    width: 1.3rem;
+    height: 1.3rem;
+    top: 50%;
+    right: 1rem;
+    margin-top: 0px;
+}
+
+.mobileSelect .selectContent .meta .ico-cls {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 1rem;
+    right: 1rem;
+    background: url(../img/ico-close.png) no-repeat;
+    background-size: 100% 200%;
+    background-position: 0 0;
+    z-index: 1;
+}
+
+.mobileSelect .selectContent .hot-list {
+    padding: 0 10px;
+    padding-bottom: 1rem;
+}
+
+    .mobileSelect .selectContent .hot-list li {
+        float: left;
+        border: 1px solid #595959;
+        line-height: 32px;
+        width: 31%;
+        text-align: center;
+        margin: 1%;
+        color: #a7aaac;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.3rem;
+    }
+
+        .mobileSelect .selectContent .hot-list li.active {
+            background-color: #DC1E32;
+            border: 1px solid #DC1E32;
+            color: #fff;
+        }
+
+.mobileSelect .selectContent .btnsure {
+    display: block;
+    width: 100%;
+    font-size: 1.3rem;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    text-align: center;
+    border-top: 1px solid #5e5e5e;
+}
+/*新添加的 D*/
+/*下拉框组件 D*/

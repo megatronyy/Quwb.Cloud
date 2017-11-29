@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <meta content="惠商机、住宅底商、生意转让、租房、超市、理发店、服装店、饭店" name="keywords">
+    <meta content="惠商机、住宅底商、生意转让、租房、超市、理发店、服装店、饭店等，互联网商机平台。" name="description">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>@ViewData["Title"]-惠商机</title>
+
+    <link rel="stylesheet" href="~/css/lpcom.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/personal.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/override.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="personal">
+        <!--顶栏-->
+        <div class="header header-index">
+            <a id="linkCitySelect" href="###" class="city"><i class="place" style="display:none;"></i><span id="cname">北京</span><i style="display:none;"></i></a>
+            <a class="logo" href="/business/index"></a>
+            <a class="tel-call-top" href="tel:13718312531"></a>
+        </div>
+
+        @RenderBody()
+    </div>
+
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/locstor.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/common.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/replaceLinkUrl.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
