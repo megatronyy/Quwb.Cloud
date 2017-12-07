@@ -4,7 +4,6 @@ using System.Text;
 
 namespace Website.Models
 {
-    [System.Serializable]
     public class UserData
     {
         /**
