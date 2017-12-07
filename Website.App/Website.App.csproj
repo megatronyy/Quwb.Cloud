@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Website.ApiInvoke\Website.ApiInvoke.csproj" />
     <ProjectReference Include="..\Lib.Framework.Core\Lib.Framework.Core.csproj" />
+    <ProjectReference Include="..\Website.ApiInvoke\Website.ApiInvoke.csproj" />
     <ProjectReference Include="..\Website.Models\Website.Models.csproj" />
   </ItemGroup>
 
