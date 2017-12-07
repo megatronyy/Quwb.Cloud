@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Lib.Framework.Core.Helpers;
 using Newtonsoft.Json;
 using Website.App.Common;
-using Website.App.Models.Request;
-using Website.App.Models.Response;
+using Website.Models;
+using Website.Models.Request;
 
 namespace Website.App.Controllers
 {
@@ -20,7 +20,7 @@ namespace Website.App.Controllers
         }
         public IActionResult Index()
         {
-            var result = _apiClient.ApiPost<UserRequstEntity, dynamic>(new UserRequstEntity() { userId = 100000 },"/user/info");
+            var result = _apiClient.ApiPost<UserRequst, UserData>(new UserRequst() { userId = 100000 },"/user/info");
             if (result.isSuccess)
             {
                 dynamic data = result.data;
