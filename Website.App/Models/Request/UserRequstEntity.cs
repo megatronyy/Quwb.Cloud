@@ -7,6 +7,6 @@ namespace Website.App.Models.Request
 {
     public class UserRequstEntity
     {
-        public int UserId { get; set; }
+        public int userId { get; set; }
     }
 }

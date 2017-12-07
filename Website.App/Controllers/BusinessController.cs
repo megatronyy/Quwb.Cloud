@@ -20,7 +20,15 @@ namespace Website.App.Controllers
         }
         public IActionResult Index()
         {
-            var result = _apiClient.ApiPost<UserRequstEntity, UserResponseEntity>(new UserRequstEntity() { UserId = 10000 },"/user/info");
+            var result = _apiClient.ApiPost<UserRequstEntity, dynamic>(new UserRequstEntity() { userId = 100000 },"/user/info");
+            if (result.isSuccess)
+            {
+                dynamic data = result.data;
+                if (data != null)
+                {
+                    int userid = data.userid;
+                }
+            }
             return View();
         }
 
