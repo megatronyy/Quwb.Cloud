@@ -1,4 +1,5 @@
-﻿using Distribution.Services.Repositories;
+﻿using Distribution.Services.Model;
+using Distribution.Services.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,11 @@ namespace Distribution.Services
         static void Main(string[] args)
         {
             ShopInfoRepository shopInfo = new ShopInfoRepository();
-            shopInfo.GetDistributionShopList();
+            var list = shopInfo.GetDistributionShopList();
+            foreach (ShopInfo info in list)
+            {
+                shopInfo.ExecDistribution(info.ShopID);
+            }
         }
     }
 }

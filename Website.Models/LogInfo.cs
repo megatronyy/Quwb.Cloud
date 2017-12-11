@@ -58,7 +58,7 @@ namespace Website.Models
          *
          * @mbg.generated
          */
-        public DateTime accesstime { get; set; }
+        public String accesstime { get; set; }
 
         /**
          *

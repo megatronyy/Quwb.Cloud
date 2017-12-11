@@ -23,7 +23,7 @@ namespace Website.App.Controllers
             var result = _apiClient.ApiPost<UserRequst, UserData>(new UserRequst() { userId = 100000 },"/user/info");
             if (result.isSuccess)
             {
-                dynamic data = result.data;
+                UserData data = result.data;
                 if (data != null)
                 {
                     int userid = data.userid;

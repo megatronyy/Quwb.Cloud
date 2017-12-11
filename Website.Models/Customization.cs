@@ -94,7 +94,7 @@ namespace Website.Models
          *
          * @mbg.generated
          */
-        public DateTime createtime { get; set; }
+        public String createtime { get; set; }
 
         /**
          *
@@ -103,7 +103,7 @@ namespace Website.Models
          *
          * @mbg.generated
          */
-        public DateTime updatetime { get; set; }
+        public String updatetime { get; set; }
 
         /**
          *

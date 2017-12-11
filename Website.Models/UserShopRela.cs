@@ -40,7 +40,7 @@ namespace Website.Models
          *
          * @mbg.generated
          */
-        public DateTime createtime;
+        public String createtime;
 
         /**
          *

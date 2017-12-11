@@ -13,7 +13,7 @@ namespace Website.Models
         *
         * @mbg.generated
         */
-        public long picid { get; set; }
+        public int picid { get; set; }
 
         /**
          *
@@ -22,7 +22,7 @@ namespace Website.Models
          *
          * @mbg.generated
          */
-        public long shopid { get; set; }
+        public int shopid { get; set; }
 
         /**
          *
@@ -40,7 +40,7 @@ namespace Website.Models
          *
          * @mbg.generated
          */
-        public DateTime createtime { get; set; }
+        public String createtime { get; set; }
 
         /**
          *

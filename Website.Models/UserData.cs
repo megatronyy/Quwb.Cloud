@@ -58,7 +58,7 @@ namespace Website.Models
          *
          * @mbg.generated
          */
-        public DateTime lastlogintime { get; set; }
+        public String lastlogintime { get; set; }
 
         public List<UserShopRela> userShopRela { get; set; }
 
