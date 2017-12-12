@@ -13,6 +13,12 @@ namespace Website.App.Controllers
         }
         public IActionResult Index()
         {
+            string struri = "https://enterbj.zhongchebaolian.com/enterbj/platform/enterbj/maintPage.jsp";
+            System.Net.Http.HttpClient httpClient = new System.Net.Http.HttpClient();
+            httpClient.GetAsync(struri).ContinueWith((requestTask) => {
+                System.Net.Http.HttpResponseMessage response = requestTask.Result;
+               
+            });
             return View();
         }
 
