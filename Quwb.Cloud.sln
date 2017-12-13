@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{54
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distribution.Engine", "Services\Distribution.Engine\Distribution.Engine.csproj", "{83BD0F4B-C042-4365-A555-570064D96081}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distribution.Services", "Distribution.Services\Distribution.Services.csproj", "{9EBD4CCD-9167-4F38-A876-AE50B0818065}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distribution.Services", "Services\Distribution.Services\Distribution.Services.csproj", "{9EBD4CCD-9167-4F38-A876-AE50B0818065}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
