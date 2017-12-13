@@ -31,5 +31,15 @@ namespace Website.App.Controllers
             }
             return View(data);
         }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        public IActionResult Pub()
+        {
+            return View();
+        }
     }
 }
