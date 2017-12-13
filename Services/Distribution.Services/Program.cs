@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Distribution.Services
 {
     class Program
-    {
+    { 
         static void Main(string[] args)
         {
             ShopInfoRepository shopInfo = new ShopInfoRepository();
