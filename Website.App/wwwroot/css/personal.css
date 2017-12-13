@@ -34,7 +34,7 @@
         width: 100%;
         height: auto;
     }
-/*椤堕儴鏍忔牱寮� B*/
+
 a.back i {
     display: inline-block;
     width: 11px;
@@ -82,11 +82,6 @@ a.tel-call-top {
     bottom: 15px;
 }
 
-/*椤堕儴鏍忔牱寮� E*/
-
-
-/*搴曢儴鏍�  鍏叡鏍峰紡*/
-/**搴曢儴鏍囩椤� 鏍峰紡*/
 .subMenu {
     width: 33%;
     float: left;
@@ -148,7 +143,6 @@ img.menu_img {
 }
 
 
-/*渚ц竟鏍�  鍏叡鏍峰紡*/
 .side-bar a, .chat-tips i {
     background: url(../img/aside.png) no-repeat;
     background-size: 45px 138px;
@@ -219,8 +213,6 @@ img.menu_img {
         height: 120px;
     }
 
-/*涓讳綋涓氬姟   */
-
 .personal a.city i.place {
     display: inline-block;
     background: url(../img/place.png) center center no-repeat;
@@ -251,31 +243,7 @@ img.menu_img {
         vertical-align: middle;
         margin-left: 0;
     }
-/*.personal h1.logo {
-    display: inline-block;
-    background: url(../img/logo.png) center center no-repeat;
-    -webkit-background-size: 105px 18px;
-    -moz-background-size: 105px 18px;
-    background-size: 105px 18px;
-    width: 105px;
-    height: 18px;
-    vertical-align: middle;
-    margin: 10px auto 0 auto;
-    float: none;
-}*/
-/*.personal a.tel-call-top {
-    display: inline-block;
-    background: url(../img/tel-call-top.png) center center no-repeat;
-    -webkit-background-size: 95px 13px;
-    -moz-background-size: 95px 13px;
-    background-size: 95px 13px;
-    width: 95px;
-    height: 13px;
-    vertical-align: middle;
-    float: right;
-    right: 10px;
-    bottom: 15px;
-}*/
+
 .personal .container {
     background-color: #F5F5F5;
 }
