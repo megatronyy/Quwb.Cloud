@@ -77,7 +77,7 @@ namespace Website.App
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=business}/{action=Index}/");
+                    template: "{controller=Home}/{action=Index}/");
             });
         }
 

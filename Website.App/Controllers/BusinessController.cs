@@ -31,10 +31,5 @@ namespace Website.App.Controllers
             }
             return View(data);
         }
-
-        public IActionResult Articles()
-        {
-            return View();
-        }
     }
 }
