@@ -23,13 +23,15 @@ namespace Website.App.Controllers
 
         public IActionResult Order()
         {
-            UserData data = null;
-            var result = _apiClient.ApiPost<UserRequst, UserData>(new UserRequst() { userId = 100000 }, "/user/info");
-            if (result.isSuccess)
-            {
-                data = result.data;
-            }
-            return View(data);
+            //UserData data = null;
+            //var result = _apiClient.ApiPost<UserRequst, UserData>(new UserRequst() { userId = 100000 }, "/user/info");
+            //if (result.isSuccess)
+            //{
+            //    data = result.data;
+            //}
+            //return View(data);
+
+            return View();
         }
     }
 }
