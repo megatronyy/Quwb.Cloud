@@ -1,25 +1,27 @@
 ﻿@model Website.Models.UserData
 
 @{
-    ViewData["Title"] = "我的商机";
+    ViewData["Title"] = "登录";
     Layout = "~/Views/Shared/_LayoutTwo.cshtml";
 }
 
-<form method="post" action="" id="form1" class="per_login">
+@using (Html.BeginForm("index", "business", @FormMethod.Post, new { id = "form1", @class = "per_login" }))
+{
     <div class="dk">
-        <p>输入手机号和验证码即可下单</p>
+        <p>登录获取商机</p>
     </div>
     <div class="carMeg">
         <div class="xia">
-
-            <input id="txtMobile" class="tel" type="text" placeholder="请输入手机号码" />
-            <div class="useryzm">
-                <input id="txtCheckCode" class="carPhone_lastinput1 yzm" type="text" placeholder="请输入验证码" />
-                <input id="btn-send-code" class="carPhone_lastinput2" type="button" value="发送验证码" />
+            <div><input id="txtMobile" name="txtMobile" class="tel" type="text" placeholder="请输入手机号码" /></div>
+            <div style="margin-top:10px;">
+                <input id="txtpwd" name="txtpwd" class="tel" type="text" placeholder="请输入密码" />
             </div>
-            <div class="tips" id="valiMsg"></div>
-            <button id="submit" type="button" class="submit_button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
-
+            <div>
+                <div class="tips" id="valiMsg"></div>
+                <button type="submit" class="submit_button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+            </div>
         </div>
+        
     </div>
-</form>
+    <div style="text-align:center;font-size:14px;"><a href="/business/register">注册帐号>></a></div>
+}

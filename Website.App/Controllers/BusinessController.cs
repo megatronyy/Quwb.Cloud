@@ -43,5 +43,15 @@ namespace Website.App.Controllers
         {
             return View();
         }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        public JsonResult SendMsg(string mobile)
+        {
+            return new JsonResult(null);
+        }
     }
 }

@@ -20,5 +20,19 @@ namespace Lib.Framework.Core.Helpers
                 return default(T);
             }
         }
+
+        public static string JsonTo<T>(T data)
+        {
+            try
+            {
+                string obj = JsonConvert.SerializeObject(data);
+                return obj;
+
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
+        }
     }
 }
