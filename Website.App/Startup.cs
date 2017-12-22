@@ -42,8 +42,11 @@ namespace Website.App
             });
             services.AddMemoryCache();//启用MemoryCache
 
-            services.AddAuthentication(options=> {
-                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/business/order";
+                options.LogoutPath = "/business/index";
             });
             //services.AddDistributedRedisCache(option =>
             //{
@@ -75,6 +78,8 @@ namespace Website.App
             }
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

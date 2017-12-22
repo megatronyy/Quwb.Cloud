@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Lib.Framework.Core.Helpers;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Security.Claims;
 using Website.ApiInvoke.Entity;
 using Website.Models;
 using Website.Models.Request;
@@ -11,7 +15,7 @@ namespace Website.App.Controllers
     {
         private ApiInvoke.ApiClient _apiClient;
 
-        public BusinessController(IServiceCollection services)
+        public BusinessController()
         {
             _apiClient = new ApiInvoke.ApiClient("ApiConfig");
         }
@@ -31,10 +35,26 @@ namespace Website.App.Controllers
                 string txtMobile = Request.Form["txtMobile"];
                 string txtPwd = Request.Form["txtPwd"];
 
-                model = _apiClient.ApiGet<UserAccount>(string.Format("mobile={0}&pwd={1}", txtMobile, txtPwd), 
+                model = _apiClient.ApiGet<UserAccount>(string.Format("mobile={0}&pwd={1}", txtMobile, txtPwd),
                     "/user/login");
 
-                if (model.isSuccess && model.code == 0) {
+                if (model.isSuccess && model.code == 0)
+                {
+                    var user = new ClaimsPrincipal(
+                        new ClaimsIdentity(new[]
+                        {
+                            new Claim(ClaimTypes.Name, model.data.username),
+                            new Claim(ClaimTypes.MobilePhone, model.data.mobile),
+                            new Claim(ClaimTypes.UserData, JsonHelper.JsonTo<UserAccount>(model.data)),
+                        },
+                        CookieAuthenticationDefaults.AuthenticationScheme));
+
+                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, user, new AuthenticationProperties
+                    {
+                        IsPersistent = true,
+                        ExpiresUtc = DateTimeOffset.Now.Add(TimeSpan.FromDays(7)) // 有效时间
+                    });
+
                     return Redirect("/business/order");
                 }
             }
