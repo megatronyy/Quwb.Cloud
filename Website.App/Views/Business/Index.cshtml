@@ -1,4 +1,4 @@
-﻿@model Website.Models.UserData
+﻿@model Website.ApiInvoke.Entity.ResponseEntity<UserAccount>;
 
 @{
     ViewData["Title"] = "登录";
@@ -14,7 +14,7 @@
         <div class="xia">
             <div><input id="txtMobile" name="txtMobile" class="tel" type="text" placeholder="请输入手机号码" /></div>
             <div style="margin-top:10px;">
-                <input id="txtpwd" name="txtpwd" class="tel" type="text" placeholder="请输入密码" />
+                <input id="txtpwd" name="txtpwd" class="tel" type="password" placeholder="请输入密码" />
             </div>
             <div>
                 <div class="tips" id="valiMsg"></div>
@@ -24,4 +24,12 @@
         
     </div>
     <div style="text-align:center;font-size:14px;"><a href="/business/register">注册帐号>></a></div>
+}
+
+@section Scripts{
+    <script type="text/javascript">
+    $(function () {
+        $("#valiMsg").html("@Model.message");
+    });
+    </script>
 }

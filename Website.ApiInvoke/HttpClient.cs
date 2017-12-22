@@ -10,9 +10,9 @@ namespace Website.ApiInvoke
     {
         public static string HttpGet(string Url, string getDataStr, int timeOut = 3000)
         {
-            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(Url + ((getDataStr == "") ? "" : "?") + getDataStr);
+            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(Url + ((getDataStr == "") ? "" : "&") + getDataStr);
             httpWebRequest.Method = "GET";
-            httpWebRequest.ContentType = "text/html;charset=UTF-8";
+            httpWebRequest.ContentType = "application/json;charset=UTF-8";
             httpWebRequest.Proxy = null;
             httpWebRequest.Timeout = timeOut;
             string result;

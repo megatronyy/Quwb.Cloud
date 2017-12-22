@@ -58,7 +58,32 @@ namespace Website.ApiInvoke
                 return result;
             }
         }
- 
+
+        /// <summary>
+        /// 调用Api获取返回结果
+        /// </summary>
+        /// <param name="requestData">Get数据</param>
+        /// <param name="method">调用方法名</param>
+        /// <returns></returns>
+        public ResponseEntity<TResponseData> ApiGet<TResponseData>(string requestData,
+            string method,Func<string, ResponseEntity<TResponseData>> func = null)
+            where TResponseData : new()
+        {
+            try
+            {
+                var validateResult = ValidateConfig<TResponseData>(method);
+                if (!validateResult.isSuccess) return validateResult;
+                var response = HttpClient.HttpGet(GetPostUrl(method), requestData, 3000);
+                return func != null ? func(response) : new SerializerJsonHelper().JsonToObject<ResponseEntity<TResponseData>>(response);
+            }
+            catch (Exception exception)
+            {
+                var result = CreateDefaultRequest<TResponseData>();
+                result.message = exception.Message;
+                return result;
+            }
+        }
+
 
         /// <summary>
         /// 校验配置文件
