@@ -16,6 +16,7 @@ using Lib.Framework.Core.Options;
 using Lib.Framework.Core.IoC;
 using Lib.Framework.Core.EfDbContext;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Website.App
 {
@@ -41,6 +42,9 @@ namespace Website.App
             });
             services.AddMemoryCache();//启用MemoryCache
 
+            services.AddAuthentication(options=> {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
             //services.AddDistributedRedisCache(option =>
             //{
             //    option.Configuration = "localhost";//redis连接字符串
@@ -48,9 +52,8 @@ namespace Website.App
             //    option.InstanceName = "";//Redis实例名称
             //});//启用Redis
 
-
             services.Configure<MemoryCacheEntryOptions>(
-                    options => options.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)); //设置MemoryCache缓存有效时间为5分钟。
+                    options => options.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(60)); //设置MemoryCache缓存有效时间为5分钟。
                 //.Configure<DistributedCacheEntryOptions>(option =>
                   //  option.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5));//设置Redis缓存有效时间为5分钟。
             return InitIoC(services);

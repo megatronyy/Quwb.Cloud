@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using Website.ApiInvoke.Entity;
 using Website.Models;
@@ -10,7 +11,7 @@ namespace Website.App.Controllers
     {
         private ApiInvoke.ApiClient _apiClient;
 
-        public BusinessController()
+        public BusinessController(IServiceCollection services)
         {
             _apiClient = new ApiInvoke.ApiClient("ApiConfig");
         }
@@ -33,8 +34,9 @@ namespace Website.App.Controllers
                 model = _apiClient.ApiGet<UserAccount>(string.Format("mobile={0}&pwd={1}", txtMobile, txtPwd), 
                     "/user/login");
 
-                if (model.isSuccess && model.code == 0)
+                if (model.isSuccess && model.code == 0) {
                     return Redirect("/business/order");
+                }
             }
 
             return View(model);

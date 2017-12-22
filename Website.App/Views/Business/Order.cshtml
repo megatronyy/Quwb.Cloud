@@ -2,24 +2,25 @@
 
 @{
     ViewData["Title"] = "我的商机";
-    Layout = "~/Views/Shared/_LayoutTwo.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<form method="post" action="" id="form1" class="per_login">
+<div class="zhishi">
     <div class="dk">
-        <p>输入手机号和验证码即可下单</p>
+        <p>我的商机</p>
     </div>
-    <div class="carMeg">
-        <div class="xia">
-
-            <input id="txtMobile" class="tel" type="text" placeholder="请输入手机号码" />
-            <div class="useryzm">
-                <input id="txtCheckCode" class="carPhone_lastinput1 yzm" type="text" placeholder="请输入验证码" />
-                <input id="btn-send-code" class="carPhone_lastinput2" type="button" value="发送验证码" />
-            </div>
-            <div class="tips" id="valiMsg"></div>
-            <button id="submit" type="button" class="submit_button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
-
-        </div>
-    </div>
-</form>
+</div>
+<!--底部栏 -->
+<div class="footer-index">
+    <a id="one" class="subMenu" href="/home/index">
+        <span class="tab-img tab-img-index"></span>
+        <span class="menu_name">首页</span>
+    </a>
+    <a id="two" class="subMenu" href="/business/index">
+        <span class="tab-img tab-img-order"></span>
+        <span class="menu_name">我的商机</span>
+    </a>
+    <a id="three" class="subMenu" href="/company/index">
+        <span class="tab-img tab-img-knowledge"></span>
+        <span class="menu_name">关于我们</span>
+    </a>
+</div>
