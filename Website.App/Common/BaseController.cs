@@ -13,6 +13,7 @@ namespace Website.App.Common
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {
+            ViewBag.UserAccount = null;
             var auth = HttpContext.User;
             if (auth != null && auth.Identities.Count() > 0)
             {
@@ -23,7 +24,6 @@ namespace Website.App.Common
                         }
                     }
                 }
-                ViewBag.UserAccount = auth;
             }
             base.OnActionExecuting(context);
         }

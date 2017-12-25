@@ -4,3 +4,9 @@
     Layout = "~/Views/Shared/_LayoutTwo.cshtml";
 }
 
+@using (Html.BeginForm("add", "business", @FormMethod.Post, new { id = "form1", @class = "per_login" }))
+{
+    <div class="dk">
+        <p>订阅商机</p>
+    </div>
+}

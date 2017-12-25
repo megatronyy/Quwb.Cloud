@@ -65,6 +65,7 @@ namespace Website.App.Controllers
                     return Redirect("/business/order");
                 }
                 else {
+                    model.data = new UserAccount();
                     model.data.username = txtMobile;
                     model.data.password = txtPwd;
                 }
@@ -90,6 +91,7 @@ namespace Website.App.Controllers
         #endregion
 
         #region 获取商机
+        [Authorize]
         public IActionResult Add()
         {
             return View();
@@ -97,6 +99,7 @@ namespace Website.App.Controllers
         #endregion 
 
         #region 发布商机
+        [Authorize]
         public IActionResult Pub()
         {
             return View();
