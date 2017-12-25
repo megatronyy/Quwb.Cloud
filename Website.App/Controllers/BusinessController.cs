@@ -1,17 +1,19 @@
 ﻿using Lib.Framework.Core.Helpers;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Security.Claims;
 using Website.ApiInvoke.Entity;
+using Website.App.Common;
 using Website.Models;
 using Website.Models.Request;
 
 namespace Website.App.Controllers
 {
-    public class BusinessController : Controller
+    public class BusinessController : BaseController
     {
         private ApiInvoke.ApiClient _apiClient;
 
@@ -23,6 +25,10 @@ namespace Website.App.Controllers
         #region 登录
         public IActionResult Index()
         {
+            //如果已经登录，跳转到订单页
+            if(ViewBag.UserAccount != null)
+                return Redirect("/business/order");
+
             ResponseEntity<UserAccount> model = new ResponseEntity<UserAccount>()
             {
                 isSuccess = true,
@@ -49,13 +55,18 @@ namespace Website.App.Controllers
                         },
                         CookieAuthenticationDefaults.AuthenticationScheme));
 
-                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, user, new AuthenticationProperties
+                    HttpContext.SignInAsync(Startup.CookiesName, user, new AuthenticationProperties
                     {
+                        ExpiresUtc = DateTime.UtcNow.AddHours(12),
                         IsPersistent = true,
-                        ExpiresUtc = DateTimeOffset.Now.Add(TimeSpan.FromDays(7)) // 有效时间
+                        AllowRefresh = false
                     });
 
                     return Redirect("/business/order");
+                }
+                else {
+                    model.data.username = txtMobile;
+                    model.data.password = txtPwd;
                 }
             }
 
@@ -64,6 +75,7 @@ namespace Website.App.Controllers
         #endregion
 
         #region 商机列表
+        [Authorize]
         public IActionResult Order()
         {
             UserData data = null;
@@ -171,6 +183,9 @@ namespace Website.App.Controllers
                         {
                             return Redirect("/business/index");
                         }
+                    }
+                    else {
+
                     }
                 }
             }

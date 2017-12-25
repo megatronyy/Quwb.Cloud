@@ -17,11 +17,15 @@ using Lib.Framework.Core.IoC;
 using Lib.Framework.Core.EfDbContext;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
+using Website.App.Common;
 
 namespace Website.App
 {
     public class Startup
     {
+        public static string CookiesName = "UserInfo";
+
         public static ILoggerRepository repository { get; set; }
         public Startup(IConfiguration configuration)
         {
@@ -40,25 +44,25 @@ namespace Website.App
             {
                 option.Filters.Add(new GlobalExceptionFilter());
             });
-            services.AddMemoryCache();//启用MemoryCache
-
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            .AddCookie(options =>
-            {
-                options.LoginPath = "/business/order";
-                options.LogoutPath = "/business/index";
-            });
-            //services.AddDistributedRedisCache(option =>
-            //{
-            //    option.Configuration = "localhost";//redis连接字符串
-
-            //    option.InstanceName = "";//Redis实例名称
-            //});//启用Redis
-
+            //启用MemoryCache
+            services.AddMemoryCache();
+            //设置MemoryCache缓存有效时间为5分钟。
             services.Configure<MemoryCacheEntryOptions>(
-                    options => options.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(60)); //设置MemoryCache缓存有效时间为5分钟。
-                //.Configure<DistributedCacheEntryOptions>(option =>
-                  //  option.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5));//设置Redis缓存有效时间为5分钟。
+                    options => options.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(60));
+            //添加cookies中间件
+            services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = CookiesName;
+                options.DefaultChallengeScheme = CookiesName;
+                options.DefaultSignInScheme = CookiesName;
+            })
+            .AddCookie(CookiesName, m =>
+            {
+                m.LoginPath = new PathString("/business/index");
+                m.AccessDeniedPath = new PathString("/business/index");
+                m.LogoutPath = new PathString("/home/index");
+                m.Cookie.Path = "/";
+            });
+
             return InitIoC(services);
         }
 
