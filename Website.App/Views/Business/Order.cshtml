@@ -1,12 +1,56 @@
 ﻿@model Website.Models.UserData
 
 @{
-    ViewData["Title"] = "我的商机";
+    ViewData["Title"] = "商机中心";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="zhishi">
     <div class="dk">
-        <p>我的商机</p>
+        <p>商机中心</p>
+    </div>
+    <div class="newsItem">
+        <a href="/business/mypub">
+            <dl class="clearfix">
+                <dt>
+                    <i class="i1 newsItem_img">
+                        <img src="~/img/main2.jpg" alt="" />
+                    </i>
+                </dt>
+                <dd>
+                    <p class="news_title">我的发布</p>
+                    <p class=" news_sub_title"></p>
+                    <p class="news_type">我个人发布的商机</p>
+                </dd>
+            </dl>
+        </a>
+        <a href="/business/myadd">
+            <dl class="clearfix">
+                <dt>
+                    <i class="i1 newsItem_img">
+                        <img src="~/img/main3.jpg" alt="" />
+                    </i>
+                </dt>
+                <dd>
+                    <p class="news_title">我的订阅</p>
+                    <p class=" news_sub_title"></p>
+                    <p class="news_type">我订阅的商机</p>
+                </dd>
+            </dl>
+        </a>
+        <a href="/business/mybusiness">
+            <dl class="clearfix">
+                <dt>
+                    <i class="i1 newsItem_img">
+                        <img src="~/img/main1.jpg" alt="" />
+                    </i>
+                </dt>
+                <dd>
+                    <p class="news_title">我的商机</p>
+                    <p class=" news_sub_title"></p>
+                    <p class="news_type">根据我订阅的商机而获取到的商机数据</p>
+                </dd>
+            </dl>
+        </a>
     </div>
 </div>
 <!--底部栏 -->

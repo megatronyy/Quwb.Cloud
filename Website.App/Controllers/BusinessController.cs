@@ -70,18 +70,45 @@ namespace Website.App.Controllers
         }
         #endregion
 
-        #region 商机列表
+        #region 商机中心
         [Authorize]
         public IActionResult Order()
         {
-            UserData data = null;
-            var result = _apiClient.ApiPost<UserRequst, UserData>(new UserRequst() { userId = 100000 }, "/user/info");
-            if (result.isSuccess)
-            {
-                data = result.data;
-            }
-            //return View(data);
             return View();
+        }
+
+        public IActionResult MyPub()
+        {
+            UserData userData = GetUserData();
+            return View(userData);
+        }
+
+        public IActionResult MyAdd()
+        {
+            UserData userData = GetUserData();
+            return View(userData);
+        }
+
+        public IActionResult MyBusiness()
+        {
+            UserData userData = GetUserData();
+            return View(userData);
+        }
+
+        private UserData GetUserData()
+        {
+            UserData userData = null;
+            UserAccount userAccount = JsonHelper.JsonTo<UserAccount>(ViewBag.UserAccount);
+            if (userAccount != null)
+            {
+                var result = _apiClient.ApiPost<UserRequst, UserData>(new UserRequst() { userId = userAccount.userid }, "/user/info");
+                if (result.isSuccess)
+                {
+                    userData = result.data;
+                }
+            }
+
+            return userData;
         }
         #endregion
 

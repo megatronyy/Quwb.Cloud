@@ -61,7 +61,7 @@ namespace Website.App
                 m.AccessDeniedPath = new PathString("/business/index");
                 m.LogoutPath = new PathString("/home/index");
                 m.Cookie.Path = "/";
-                m.Cookie.Domain = ".shopfang.cn";
+                //m.Cookie.Domain = ".shopfang.cn";
             });
 
             return InitIoC(services);
