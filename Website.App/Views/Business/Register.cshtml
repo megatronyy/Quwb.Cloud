@@ -1,4 +1,4 @@
-﻿@model Website.ApiInvoke.Entity.ResponseEntity<int>;
+﻿@model Website.App.ViewModel.RegisterModel;
 @{
     ViewData["Title"] = "注册帐号";
     Layout = "~/Views/Shared/_LayoutTwo.cshtml";
@@ -11,22 +11,22 @@
     <div class="carMeg">
         <div class="xia">
             <div>
-                <input id="txtMobile" name="txtMobile" class="tel" type="text" placeholder="请输入手机号码" />
+                <input id="txtMobile" name="Mobile" class="tel" type="text" placeholder="请输入手机号码" value="@(Model != null ? Model.Mobile : "")" />
             </div>
             <div style="margin-top:10px;">
-                <input id="txtName" class="tel" name="txtName" type="text" placeholder="请输入用户名" />
+                <input id="txtName" class="tel" name="UserName" type="text" placeholder="请输入用户名" value="@(Model != null ? Model.UserName : "")" />
             </div>
             <div style="margin-top:10px;">
-                <input id="txtPwd" class="tel" name="txtPwd" type="password" placeholder="请输入密码" />
+                <input id="txtPwd" class="tel" name="Password" type="password" placeholder="请输入密码" value="@(Model != null ? Model.Password : "")" />
             </div>
             <div style="margin-top:10px;">
-                <input id="txtRePwd" class="tel" name="txtRePwd" type="password" placeholder="请确认密码" />
+                <input id="txtRePwd" class="tel" name="RePassword" type="password" placeholder="请确认密码" value="@(Model != null ? Model.RePassword : "")" />
             </div>
             <div class="useryzm">
-                <input id="txtCheckCode" name="txtCheckCode" class="carPhone_lastinput1 yzm" type="text" placeholder="请输入验证码" />
+                <input id="txtCheckCode" name="CheckCode" class="carPhone_lastinput1 yzm" type="text" placeholder="请输入验证码" value="@(Model != null && Model.CheckCode>10000 ? Model.CheckCode.ToString() : "")" />
                 <input id="btn-send-code" class="carPhone_lastinput2" type="button" value="发送验证码" />
             </div>
-            <div class="tips" id="valiMsg"></div>
+            <div class="tips" id="valiMsg">@Model.Msg</div>
             <button id="submit" type="submit" class="submit_button">注&nbsp;&nbsp;&nbsp;&nbsp;册</button>
         </div>
     </div>
@@ -35,8 +35,6 @@
 @section Scripts{
     <script type="text/javascript">
         $(function () {
-            $("#valiMsg").html("@Model.message");
-
             $("#btn-send-code").click(function () {
                 var that = this;
                 var strMobile = $.trim($("#txtMobile").val());

@@ -1,4 +1,4 @@
-﻿@model Website.ApiInvoke.Entity.ResponseEntity<UserAccount>;
+﻿@model Website.App.ViewModel.LoginViewModel
 
 @{
     ViewData["Title"] = "登录";
@@ -12,12 +12,12 @@
     </div>
     <div class="carMeg">
         <div class="xia">
-            <div><input id="txtMobile" name="txtMobile" class="tel" type="text" placeholder="请输入手机号码" value="@(Model.data==null ? "" : Model.data.username)" /></div>
+            <div><input id="txtMobile" name="UserMobile" class="tel" type="text" placeholder="请输入手机号码" value="@(Model==null ? "" : Model.UserMobile)" /></div>
             <div style="margin-top:10px;">
-                <input id="txtpwd" name="txtpwd" class="tel" type="password" placeholder="请输入密码" value="@(Model.data==null ? "" : Model.data.password)" />
+                <input id="txtpwd" name="Password" class="tel" type="password" placeholder="请输入密码" value="@(Model==null ? "" : Model.Password)" />
             </div>
             <div>
-                <div class="tips" id="valiMsg">@Model.message</div>
+                <div class="tips" id="valiMsg">@Model.Msg</div>
                 <button type="submit" class="submit_button">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
             </div>
         </div>
